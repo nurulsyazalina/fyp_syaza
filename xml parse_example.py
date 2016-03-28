@@ -14,12 +14,12 @@ for xmlfile in glob.glob('C:/nltk_data/english/*.xml') :
 
     documents = author.getElementsByTagName("document")
 
-    with open('C:/nltk_data/english/output/output.txt', 'a') as f:  
+    with open(xmlfile.replace('.xml', '.txt'), 'a') as f:  
         for document in documents:
             firstchild = document.firstChild.data
        #     sys.stdout = f
             print(firstchild)
-            f.write(firstchild)
+            f.write(firstchild + '\n')
       # sys.stdout = open("output.txt", 'w')    
     
 
